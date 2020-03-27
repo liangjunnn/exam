@@ -1,14 +1,12 @@
 package com.exam.exam_system.controller.examController;
 
 import com.alibaba.fastjson.JSON;
-import com.exam.exam_system.common.PageRequest;
 import com.exam.exam_system.common.Result;
 import com.exam.exam_system.common.config.annotation.LoginUser;
 import com.exam.exam_system.common.enums.ErrorMsgEnum;
 import com.exam.exam_system.controller.BaseController;
 import com.exam.exam_system.pojo.LoginUserPojo;
 import com.exam.exam_system.pojo.request.ExamRequest;
-import com.exam.exam_system.pojo.response.ExamVO;
 import com.exam.exam_system.service.ExamService.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
