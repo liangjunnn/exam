@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.exam_system.mapper.timemapper.TimeMapper">
+
+    <select id="getTime" resultType="java.util.Date">
+		select NOW() from dual
+	</select>
+</mapper>
