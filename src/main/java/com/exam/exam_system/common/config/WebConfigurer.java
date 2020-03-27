@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 import java.util.List;
@@ -18,7 +19,8 @@ import java.util.List;
 @Configuration
 public class WebConfigurer extends WebMvcConfigurationSupport {
     private final LoginInterceptor loginInterceptor;
-    public WebConfigurer(LoginInterceptor loginInterceptor){
+
+    public WebConfigurer(LoginInterceptor loginInterceptor) {
         this.loginInterceptor = loginInterceptor;
     }
 
@@ -42,10 +44,13 @@ public class WebConfigurer extends WebMvcConfigurationSupport {
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**")
-        .excludePathPatterns("/user/loginUser")
-        .excludePathPatterns("/user/registerUser")
-        .excludePathPatterns("/user/loginUser")
-        .excludePathPatterns("/login/goLogin");
+                .excludePathPatterns("/user/loginUser")
+                .excludePathPatterns("/user/registerUser")
+                .excludePathPatterns("/user/loginUser")
+                .excludePathPatterns("/exam/login")
+                .excludePathPatterns("/static/**");
         super.addInterceptors(registry);
     }
+
+
 }

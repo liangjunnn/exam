@@ -24,4 +24,59 @@
         values (#{examRequest.userId,jdbcType=BIGINT}, #{examRequest.subjectId,jdbcType=VARCHAR},
         #{examRequest.examTypeId,jdbcType=BIGINT}, #{examRequest.status,jdbcType=INTEGER})
     </insert>
+
+    <select id="selectExamAll" resultMap="BaseResultMap">
+        SELECT user_id
+        ,subject_id
+        ,exam_type_id
+        ,STATUS
+        ,create_time
+        ,modify_time
+        FROM exam_exam
+        <where>
+            <if test="request.userId != null">
+                user_id = #{request.userId}
+            </if>
+            <if test="request.subjectId != null and request.subjectId != ''">
+                and FIND_IN_SET(#{request.subjectId },subject_id)
+            </if>
+            <if test="request.examTypeId != null">
+                and exam_type_id = #{request.examTypeId}
+            </if>
+            <if test="request.status != null">
+                and status = #{request.status}
+            </if>
+            <if test="request.createMinTime != null">
+                and create_time <![CDATA[ >= ]]> #{request.createMinTime}
+            </if>
+            <if test="request.createMaxTime != null">
+                and create_time <![CDATA[ <= ]]> #{request.createMaxTime}
+            </if>
+        </where>
+
+    </select>
+    <select id="selectExamCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM exam_exam
+        <where>
+            <if test="request.userId != null">
+                user_id = #{request.userId}
+            </if>
+            <if test="request.subjectId != null and request.subjectId != ''">
+                and FIND_IN_SET(#{request.subjectId },subject_id)
+            </if>
+            <if test="request.examTypeId != null">
+                and exam_type_id = #{request.examTypeId}
+            </if>
+            <if test="request.status != null">
+                and status = #{request.status}
+            </if>
+            <if test="request.createMinTime != null">
+                and create_time <![CDATA[ >= ]]> #{request.createMinTime}
+            </if>
+            <if test="request.createMaxTime != null">
+                and create_time <![CDATA[ <= ]]> #{request.createMaxTime}
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Date : 2020/3/27 15:07
  */
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/exam")
 public class LoginController {
 
-    @GetMapping("/goLogin")
+    @GetMapping("/login")
     public String goLogin(){
-        return "index";
+        return "login";
     }
 }

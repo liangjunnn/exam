@@ -32,4 +32,13 @@ public interface ExamMapper {
      * @Return :
      **/
     List<ExamVO> selectExamAll(@Param("request") ExamRequest request, @Param("offset") int offset, @Param("limit") int limit);
+
+    /**
+     * @param request
+     * @Author :
+     * @Description : 查询所有考试总数
+     * @Date : 2020/3/27 15:27
+     * @Return :
+     **/
+    int selectExamCount(@Param("request") ExamRequest request);
 }

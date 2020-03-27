@@ -27,6 +27,10 @@ public class ExamRequest {
 
     private Date createTime;
 
+    private Date createMinTime;
+
+    private Date createMaxTime;
+
 
     private Date modifyTime;
 
@@ -84,5 +88,21 @@ public class ExamRequest {
 
     public void setModifyTime(Date modifyTime) {
         this.modifyTime = modifyTime;
+    }
+
+    public Date getCreateMinTime() {
+        return createMinTime;
+    }
+
+    public void setCreateMinTime(Date createMinTime) {
+        this.createMinTime = createMinTime;
+    }
+
+    public Date getCreateMaxTime() {
+        return createMaxTime;
+    }
+
+    public void setCreateMaxTime(Date createMaxTime) {
+        this.createMaxTime = createMaxTime;
     }
 }

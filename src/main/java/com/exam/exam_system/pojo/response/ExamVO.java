@@ -1,6 +1,7 @@
 package com.exam.exam_system.pojo.response;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author :
@@ -29,6 +30,8 @@ public class ExamVO {
 
 
     private Date modifyTime;
+
+    private List<String> subjectName;
 
     public Long getId() {
         return id;
@@ -84,5 +87,13 @@ public class ExamVO {
 
     public void setModifyTime(Date modifyTime) {
         this.modifyTime = modifyTime;
+    }
+
+    public List<String> getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(List<String> subjectName) {
+        this.subjectName = subjectName;
     }
 }
