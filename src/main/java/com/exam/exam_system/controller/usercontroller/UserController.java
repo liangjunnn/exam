@@ -176,4 +176,6 @@ public class UserController extends BaseController {
         userService.batchDelStuByIds(userIds.getUserIds());
         return new Result<Object>();
     }
+
+
 }

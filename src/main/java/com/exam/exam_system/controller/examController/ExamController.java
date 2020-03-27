@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * @Author :
  * @ClassName : ExamController
- * @Description :  考试控制器
+ * @Description : 考试控制器
  * @Date : 2020/3/26 15:18
  */
 @RestController
@@ -35,7 +35,7 @@ public class ExamController extends BaseController {
     /**
      * @param examRequest
      * @Author :
-     * @Description :  报名参加考试
+     * @Description : 报名参加考试
      * @Date : 2020/3/26 15:22
      * @Return :
      **/

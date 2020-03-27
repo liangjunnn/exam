@@ -44,7 +44,8 @@ public class WebConfigurer extends WebMvcConfigurationSupport {
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**")
         .excludePathPatterns("/user/loginUser")
         .excludePathPatterns("/user/registerUser")
-        .excludePathPatterns("/user/loginUser");
+        .excludePathPatterns("/user/loginUser")
+        .excludePathPatterns("/login/goLogin");
         super.addInterceptors(registry);
     }
 }
